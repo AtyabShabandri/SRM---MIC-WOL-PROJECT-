@@ -48,7 +48,7 @@ def download_images():
                     urllib.request.urlretrieve(src, os.path.join(save_folder, topic+str(count)+'.jpg'))
                 else:
                     raise TypeError
-            except Exception as e:              #catches type error along with other errors
+            except Exception as e:
                 print(f'fail with error {e}')
     
     driver.close()
