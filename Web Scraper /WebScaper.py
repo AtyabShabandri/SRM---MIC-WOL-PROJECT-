@@ -36,7 +36,7 @@ def download_images():
     elem1 = driver.find_element_by_id('islmp')
     sub = elem1.find_elements_by_tag_name('img')
     
-    count=0
+    count = 0
     for j,i in enumerate(sub):
         if j < n_images:
             src = i.get_attribute('src')                         
@@ -45,7 +45,7 @@ def download_images():
                     src  = str(src)
                     print(src)
                     
-                    urllib.request.urlretrieve(src, os.path.join(save_folder, topic+str(count)+'.jpg'))
+                    urllib.request.urlretrieve(src, os.path.join(save_folder, topic+str(j)+'.jpg'))
                 else:
                     raise TypeError
             except Exception as e:
@@ -56,3 +56,5 @@ def download_images():
 if __name__ == "__main__":
     main()
     
+                    
+        
